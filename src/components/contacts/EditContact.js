@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Consumer } from '../../context';
 import uuid from 'uuid';
 import TextInputGroup from '../layout/TextInputGroup';
 import axios from 'axios';
@@ -75,7 +74,7 @@ class EditContact extends Component {
   render() {
     const { name, phone, email, errors } = this.state;
     return (
-      <Consumer>
+      <div>
         {value => {
           const { dispatch } = value;
           return (
@@ -120,7 +119,7 @@ class EditContact extends Component {
             </div>
           );
         }}
-      </Consumer>
+      </div>
     );
   }
 }

@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  NavLink
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Contacts from './components/contacts/Contacts';
 import Header from './components/layout/Header';
-import { Provider } from './context';
+import { Provider } from 'react-redux';
 import AddContact from './components/contacts/AddContact';
 import About from './components/About';
 import NotFound from './pages/NotFound';
 import Test from './components/test/Test';
 import EditContact from './components/contacts/EditContact';
+import store from './store';
 
 class App extends Component {
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <div className="App">
             <Header branding="Contact Manager" />
